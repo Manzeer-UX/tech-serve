@@ -134,6 +134,15 @@ export interface WorkflowStep {
   title: string;
 }
 
+export interface ExposureSectionContent {
+  title: string;
+}
+
+export interface ExposureItem {
+  description: string;
+  id: string;
+}
+
 export interface CapabilitiesSectionContent {
   description: string;
   eyebrow: string;
@@ -473,6 +482,33 @@ export const workflowSteps: ReadonlyArray<WorkflowStep> = [
   },
 ];
 
+export const exposureSectionContent: ExposureSectionContent = {
+  title: "Built for Every Layer of the IT Sales Ecosystem.",
+};
+
+export const exposureItems: ReadonlyArray<ExposureItem> = [
+  {
+    id: "01",
+    description: "Hands-off. No ongoing costs or maintenance.",
+  },
+  {
+    id: "02",
+    description: "Data-driven risk/reward assessments.",
+  },
+  {
+    id: "03",
+    description: "Secure and stable returns are prioritized over risky degen yields.",
+  },
+  {
+    id: "04",
+    description: "Low correlation to BTC, ETH, DeFi blue chips and S&P 500.",
+  },
+  {
+    id: "05",
+    description: "Secure and audited smart contracts.",
+  },
+];
+
 export const capabilitiesSectionContent: CapabilitiesSectionContent = {
   eyebrow: "Connected capabilities",
   title: "Six Capabilities. One Connected System.",
@@ -533,9 +569,9 @@ export const capabilityItems: ReadonlyArray<CapabilityItem> = [
 
 export const audienceSectionContent: AudienceSectionContent = {
   eyebrow: "Built for every layer",
-  title: "Built for Every Layer of the IT Sales Ecosystem.",
+  title: "Six Capabilities. One Connected System.",
   description:
-    "TechServ was designed to create value across the ecosystem, not just in one corner of it. Whether you create the technology, move the technology, or deliver the technology, the platform helps you convert more opportunity into measurable growth.",
+    "AI agents, embedded finance, ecosystem intelligence, and growth strategy, everything purpose-built for the IT sales ecosystem.",
 };
 
 export const audienceItems: ReadonlyArray<AudienceItem> = [
@@ -545,7 +581,7 @@ export const audienceItems: ReadonlyArray<AudienceItem> = [
     subtitle: "Creates the Technology",
     role: "Visibility for partner ecosystems",
     challenge:
-      "You invest in partner ecosystems, but visibility stays fragmented. MDF gets spent without clear attribution, and insight into who is selling what remains limited.",
+      "You invest in partner ecosystems, but visibility stays fragmented. MDF gets spent without clear attribution. Real-time insight into who is selling what, and how effectively, remains limited.",
     help:
       "The OEM Partner Hub embeds your catalogue into live proposal workflows, gives you visibility into activation and pipeline performance, and connects MDF to attributable revenue.",
     metric: "3.8x average MDF ROI",
@@ -556,7 +592,7 @@ export const audienceItems: ReadonlyArray<AudienceItem> = [
     subtitle: "Moves the Technology",
     role: "Momentum for partner movement",
     challenge:
-      "Inventory is available, but partners often lack the tools, capital, or prioritization needed to move it efficiently. Performance data is disconnected and pipeline quality is hard to read.",
+      "Inventory is available, but partners lack either the tools, the capital, or the prioritization needed to move it efficiently. Performance data is disconnected and pipeline quality is hard to read.",
     help:
       "TechServ helps distributors unlock partner momentum with liquidity, demand intelligence, and visibility into where enablement can drive the highest movement.",
     metric: "25%+ partner productivity uplift",

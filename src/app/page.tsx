@@ -1,23 +1,28 @@
+import { CorePhilosophySection } from "@/components/shared/CorePhilosophySection";
 import { LandingBackdrop } from "@/components/layout/LandingBackdrop";
 import { FeatureShowcaseSection } from "@/components/shared/FeatureShowcaseSection";
-import { PhilosophySection } from "@/components/shared/PhilosophySection";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { HeroCopy } from "@/components/shared/HeroCopy";
 import { HeroPanel } from "@/components/shared/HeroPanel";
 import { RippleGrid } from "@/components/shared/RippleGrid";
+import { WorkflowSection } from "@/components/shared/WorkflowSection";
 import {
+  capabilitiesSectionContent,
+  capabilityItems,
   featureShowcaseItems,
   featureShowcaseSectionContent,
   heroContent,
   heroMetrics,
   navigationItems,
-  philosophySectionBlocks,
   philosophySectionContent,
+  philosophySectionPanelContent,
+  workflowSectionContent,
+  workflowSteps,
 } from "@/lib/landingPageContent";
 
 export default function Home() {
   return (
-    <div className="relative flex min-h-screen flex-col overflow-hidden">
+    <div className="relative flex min-h-screen flex-col overflow-x-clip">
       <section className=" relative overflow-hidden">
         <LandingBackdrop />
         <RippleGrid
@@ -78,9 +83,15 @@ export default function Home() {
           content={featureShowcaseSectionContent}
           items={featureShowcaseItems}
         />
-        <PhilosophySection
-          blocks={philosophySectionBlocks}
+        <CorePhilosophySection
           content={philosophySectionContent}
+          panel={philosophySectionPanelContent}
+        />
+        <WorkflowSection
+          content={workflowSectionContent}
+          nextSectionContent={capabilitiesSectionContent}
+          nextSectionItems={capabilityItems}
+          steps={workflowSteps}
         />
       </main>
     </div>

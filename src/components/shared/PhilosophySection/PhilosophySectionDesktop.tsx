@@ -9,7 +9,7 @@ import {
   type PhilosophySectionContent,
 } from "@/lib/landingPageContent";
 
-import { PhilosophySectionBlock } from "./PhilosophySectionBlock";
+import { PhilosophySectionScrollBlock } from "./PhilosophySectionScrollBlock";
 
 export interface PhilosophySectionDesktopProps {
   blocks: ReadonlyArray<PhilosophySectionBlockType>;
@@ -29,9 +29,10 @@ export function PhilosophySectionDesktop({
   const headingX = useTransform(scrollYProgress, [0, 0.28], ["22vw", "0vw"]);
   const headingScale = useTransform(scrollYProgress, [0, 0.28], [1.16, 0.92]);
   const headingY = useTransform(scrollYProgress, [0, 0.28], ["0vh", "-2vh"]);
-  const contentOpacity = useTransform(scrollYProgress, [0.14, 0.3], [0, 1]);
-  const contentX = useTransform(scrollYProgress, [0.14, 0.3], [72, 0]);
-  const contentY = useTransform(scrollYProgress, [0.14, 0.88], [40, -24]);
+  const headingOpacity = useTransform(scrollYProgress, [0, 0.08], [0, 1]);
+  const headingFilter = useTransform(scrollYProgress, [0, 0.1], ["blur(14px)", "blur(0px)"]);
+  const contentOpacity = useTransform(scrollYProgress, [0.3, 0.35], [0, 1]);
+  const contentY = useTransform(scrollYProgress, [0.3, 0.88], [32, -24]);
 
   return (
     <div ref={sectionRef} className="hidden lg:block">
@@ -40,7 +41,13 @@ export function PhilosophySectionDesktop({
           <div className="relative">
             <div className="sticky top-20 flex min-h-[calc(100vh-5rem)] items-center">
               <motion.div
-                style={{ x: headingX, y: headingY, scale: headingScale }}
+                style={{
+                  x: headingX,
+                  y: headingY,
+                  scale: headingScale,
+                  opacity: headingOpacity,
+                  filter: headingFilter,
+                }}
                 className="w-full max-w-[34rem] origin-left"
               >
                 <div className="flex items-center gap-2.5">
@@ -58,15 +65,15 @@ export function PhilosophySectionDesktop({
           </div>
 
           <motion.div
-            style={{ opacity: contentOpacity, x: contentX, y: contentY }}
+            style={{ opacity: contentOpacity, y: contentY }}
             className="space-y-7 py-[18vh]"
           >
             {blocks.map((block, index) => (
-              <PhilosophySectionBlock
+              <PhilosophySectionScrollBlock
                 key={block.title}
                 block={block}
-                delay={index * 0.08}
                 index={index}
+                progress={scrollYProgress}
               />
             ))}
           </motion.div>

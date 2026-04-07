@@ -1,0 +1,1 @@
+export { CorePhilosophySection } from "./CorePhilosophySection";

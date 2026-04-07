@@ -36,7 +36,7 @@ export function PhilosophySectionMobile({
           <PhilosophySectionBlock
             key={block.title}
             block={block}
-            delay={index * 0.06}
+            delay={0.2 + index * 0.08}
             index={index}
             isMobile
           />
