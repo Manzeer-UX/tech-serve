@@ -1,4 +1,4 @@
-export type AccentTone = "primary" | "secondary" | "gradient" | "foreground";
+﻿export type AccentTone = "primary" | "secondary" | "gradient" | "foreground";
 
 export interface ActionLink {
   href: string;
@@ -211,7 +211,7 @@ export const heroContent: LandingHeroContent = {
   headlineAccent: "One operating system",
   headlineSuffix: "for IT sales growth.",
   description:
-    "TechServ fixes the broken IT sales ecosystem, helping you find buyers earlier, close faster, unlock capital, and scale smarter on one connected platform.",
+    "The IT Sales Ecosystem was never built to move at the speed of modern demand. TechServ changes that. One connected platform helps you identify buyers earlier, win faster, unlock working capital, and scale with intelligence built into every step.",
   primaryAction: { href: "#", label: "Book a Demo" },
   secondaryAction: { href: "#", label: "See How It Works" },
 };
@@ -244,7 +244,7 @@ export const featureShowcaseSectionContent: FeatureShowcaseSectionContent = {
   eyebrow: "Features",
   title: "The IT Sales Ecosystem Has Demand. But Demand Alone Does Not Create Growth.",
   description:
-    "Opportunities are everywhere in IT—but growth gets lost between buyer intent and execution.",
+    "Across the IT ecosystem, opportunity is everywhere. Buyers are evaluating. Projects are moving. Budgets are being assigned. And yet, growth keeps getting lost between intent and execution.",
 };
 
 export const featureShowcaseItems: ReadonlyArray<FeatureShowcaseItem> = [
@@ -252,42 +252,42 @@ export const featureShowcaseItems: ReadonlyArray<FeatureShowcaseItem> = [
     id: "01",
     title: "No visibility into real buyers",
     description:
-      "Without clear market signal on who is in-market and where whitespace exists, teams react too late.",
+      "Most partners are not short on ambition. They are short on signal. Without clear intelligence on who is in-market, who is evaluating, and where whitespace exists, sales teams end up reacting too late.",
     variant: "analytics",
   },
   {
     id: "02",
     title: "Proposal cycles are too slow",
     description:
-      "Manual RFP work, fragmented pricing, and compliance-heavy workflows stretch proposals into days.",
+      "Manual RFP responses, fragmented pricing inputs, and compliance-heavy workflows stretch proposals into days when deals demand speed.",
     variant: "reports",
   },
   {
     id: "03",
     title: "Cash gets trapped",
     description:
-      "When collections take 60 to 120 days, working capital turns into a growth bottleneck.",
+      "Partners often fund projects before customers pay. When collections take 60 to 120 days, working capital becomes a growth bottleneck.",
     variant: "budgeting",
   },
   {
     id: "04",
     title: "Expertise is hard to access on demand",
     description:
-      "Most partners cannot keep deep cloud, security, AI, and delivery expertise available at all times.",
+      "Customers expect deep technical confidence across cloud, security, AI, infrastructure, and delivery. Most partners cannot keep that bench available at all times.",
     variant: "syncing",
   },
   {
     id: "05",
     title: "The ecosystem runs in silos",
     description:
-      "OEM data, distributor data, partner workflows, proposals, financing, and attribution still live apart.",
+      "OEM data, distributor data, partner workflows, proposals, financing, and attribution all live in separate systems. That fragmentation slows decisions and hides opportunity.",
     variant: "score",
   },
   {
     id: "06",
     title: "The middle market is underserved",
     description:
-      "Many channel partners have customer access, but not the tooling, capital, or enablement to scale revenue.",
+      "The middle 80% of channel partners often have customer relationships but not the tooling, capital, or enablement required to convert access into scalable revenue.",
     variant: "market",
   },
 ];
@@ -519,7 +519,7 @@ export const capabilitiesSectionContent: CapabilitiesSectionContent = {
 export const capabilityItems: ReadonlyArray<CapabilityItem> = [
   {
     id: "01",
-    title: "AIDA — Demand Intelligence",
+    title: "AIDA â€” Demand Intelligence",
     description:
       "Find the opportunities others do not see yet. AIDA brings together ICP intelligence, buyer intent signals, whitespace mapping, and competitive visibility so teams can engage earlier and sell smarter.",
     metric: "25%+",
@@ -527,7 +527,7 @@ export const capabilityItems: ReadonlyArray<CapabilityItem> = [
   },
   {
     id: "02",
-    title: "AI Agents — BidBrain, ContractAI, ConsultBot",
+    title: "AI Agents â€” BidBrain, ContractAI, ConsultBot",
     description:
       "Specialized AI agents automate critical commercial workflows across the channel, from proposal generation and contract analysis to advisory support and performance intelligence.",
     metric: "8h",
@@ -632,14 +632,14 @@ export const testimonialItems: ReadonlyArray<TestimonialItem> = [
   },
   {
     quote:
-      "We were close to passing on a major deployment because cash flow would not support it. TechServ’s financing capability changed that. One deal delivered more value than we expected from the platform in years.",
+      "We were close to passing on a major deployment because cash flow would not support it. TechServâ€™s financing capability changed that. One deal delivered more value than we expected from the platform in years.",
     name: "Anjali Kumar",
     role: "Regional Systems Integrator",
   },
   {
     quote:
       "AIDA surfaced accounts we had never actively targeted, but they were already evaluating exactly what we sold. That changed the quality of our pipeline immediately.",
-    name: "Marcus O’Reilly",
+    name: "Marcus Oâ€™Reilly",
     role: "VAR Partner",
   },
 ];
