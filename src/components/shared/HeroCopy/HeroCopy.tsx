@@ -18,7 +18,7 @@ export interface HeroCopyProps {
 
 export function HeroCopy({ content }: Readonly<HeroCopyProps>) {
   return (
-    <div className="max-w-[29rem] lg:pr-8">
+    <div className="max-w-[40rem] lg:pr-8">
       <span className="inline-flex items-center rounded-full border border-[var(--color-border-strong)] bg-white/78 px-3.5 py-1.5 text-[0.78rem] font-medium text-[var(--color-secondary-purple)] shadow-[var(--shadow-pill)]">
         {content.eyebrow}
       </span>
@@ -28,7 +28,7 @@ export function HeroCopy({ content }: Readonly<HeroCopyProps>) {
           {content.headlinePrefix}
         </p>
 
-        <h1 className="mt-3 max-w-[11.5ch] text-balance text-[clamp(3rem,4.35vw,4.45rem)] font-medium leading-[0.95] tracking-[-0.06em] text-[var(--color-brand-black)]">
+        <h1 className="mt-3 max-w-[15 .5ch] text-balance text-[clamp(3rem,4.35vw,3.5rem)] font-medium leading-[1.2] tracking-[-0.06em] text-[var(--color-brand-black)]">
           {content.headlineAccent} {content.headlineSuffix}
         </h1>
 
