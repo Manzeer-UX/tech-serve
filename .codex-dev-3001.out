@@ -1,0 +1,9 @@
+
+> tech-serve@0.1.0 dev
+> next dev --port 3001
+
+▲ Next.js 16.2.2 (Turbopack)
+- Local:         http://localhost:3001
+- Network:       http://10.8.23.113:3001
+✓ Ready in 6.6s
+[?25h
