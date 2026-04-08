@@ -81,10 +81,9 @@ export function FeatureShowcaseCard({
   return (
     <article
       className={cn(
-        "group relative min-h-[21rem] overflow-hidden rounded-[2rem] border border-[var(--color-border-strong)] bg-[linear-gradient(180deg,rgba(255,255,255,0.94),rgba(247,242,255,0.88))] px-5 py-5 shadow-[var(--shadow-card)] transition-transform duration-300 hover:-translate-y-1",
+        "group relative min-h-[19rem] overflow-hidden rounded-[1.8rem] border border-[var(--color-border-strong)] bg-[linear-gradient(180deg,rgba(255,255,255,0.94),rgba(247,242,255,0.88))] px-4 py-4 shadow-[var(--shadow-card)] transition-transform duration-300 hover:-translate-y-1 sm:min-h-[21rem] sm:rounded-[2rem] sm:px-5 sm:py-5",
       )}
     >
-      <div className="absolute inset-x-6 top-0 h-px bg-[linear-gradient(90deg,transparent,var(--color-secondary-purple),transparent)] opacity-75" />
       <div className="absolute right-[-2rem] top-[-1rem] h-24 w-24 rounded-full bg-[var(--color-glow-secondary)] blur-3xl opacity-60 transition-opacity duration-300 group-hover:opacity-90" />
       <div className="relative flex h-full flex-col">
         <div className="flex items-center justify-between gap-4">
@@ -92,7 +91,7 @@ export function FeatureShowcaseCard({
             <span className="grid h-10 w-10 shrink-0 place-items-center rounded-[1rem] border border-[var(--color-border-strong)] bg-white/88 text-[var(--color-secondary-purple)] shadow-[var(--shadow-pill)]">
               <FeatureShowcaseIcon variant={item.variant} />
             </span>
-            <h3 className="pt-1 text-[1.08rem] font-semibold tracking-[-0.03em] text-[var(--color-brand-black)]">
+            <h3 className="pt-1 text-[1.02rem] font-semibold tracking-[-0.03em] text-[var(--color-brand-black)] sm:text-[1.08rem]">
               {item.title}
             </h3>
           </div>
@@ -100,7 +99,7 @@ export function FeatureShowcaseCard({
             {item.id}
           </span>
         </div>
-        <p className="mt-3 max-w-[24rem] text-[0.9rem] leading-6 text-[var(--color-muted)]">
+        <p className="mt-3 max-w-none text-[0.9rem] leading-6 text-[var(--color-muted)]">
           {item.description}
         </p>
         <div className="mt-auto pt-5">

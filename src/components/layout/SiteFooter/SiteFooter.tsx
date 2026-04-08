@@ -31,9 +31,9 @@ export function SiteFooter({
       <div className="absolute left-[-10%] top-[-14rem] h-[24rem] w-[24rem] rounded-full bg-[rgba(150,100,250,0.12)] blur-3xl" />
       <div className="absolute right-[-8%] bottom-[-16rem] h-[26rem] w-[26rem] rounded-full bg-[rgba(80,0,254,0.1)] blur-3xl" />
 
-      <div className="mx-auto w-full max-w-[1440px] px-6 pb-8 pt-10 md:px-10 lg:px-8 lg:pt-12">
+      <div className="mx-auto w-full max-w-[1440px] px-4 pb-8 pt-10 sm:px-6 md:px-10 lg:px-8 lg:pt-12">
         <RevealInView className="flex flex-col gap-6 border-b border-[var(--color-border-subtle)] pb-8 lg:flex-row lg:items-center lg:justify-between">
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-3 sm:gap-x-5">
             <div className="inline-flex items-center gap-2.5">
               <TrackPoint className="h-4 w-4" />
               <span className="text-sm font-semibold tracking-[-0.02em] text-[var(--color-brand-black)]">
@@ -51,19 +51,19 @@ export function SiteFooter({
             ))}
           </div>
 
-          <div className="flex flex-wrap items-center gap-3 lg:justify-end">
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center lg:justify-end">
             {socialLinks.map((item) => (
               <FooterSocialButton key={item.label} item={item} />
             ))}
             <a
-              className="brand-gradient inline-flex min-h-11 items-center justify-center rounded-full px-5 text-sm font-medium !text-white shadow-[var(--shadow-button)] transition-transform duration-200 hover:-translate-y-0.5"
+              className="brand-gradient inline-flex min-h-11 w-full items-center justify-center whitespace-nowrap rounded-full px-5 text-sm font-medium !text-white shadow-[var(--shadow-button)] transition-transform duration-200 hover:-translate-y-0.5 sm:w-auto"
               href={cta.href}
             >
               {cta.label}
             </a>
-            <label className="relative">
+            <label className="relative w-full sm:w-auto">
               <span className="sr-only">Region</span>
-              <select className="min-h-11 rounded-full border border-[var(--color-border-strong)] bg-white/82 px-4 pr-10 text-sm text-[var(--color-brand-black)] shadow-[var(--shadow-pill)] outline-none transition-colors duration-200 hover:border-[var(--color-secondary-purple)]">
+              <select className="min-h-11 w-full rounded-full border border-[var(--color-border-strong)] bg-white/82 px-4 pr-10 text-sm text-[var(--color-brand-black)] shadow-[var(--shadow-pill)] outline-none transition-colors duration-200 hover:border-[var(--color-secondary-purple)] sm:min-w-[10rem]">
                 <option>Global</option>
                 <option>India</option>
                 <option>Middle East</option>
@@ -85,7 +85,7 @@ export function SiteFooter({
         <RevealInView className="relative mt-14 border-t border-[var(--color-border-subtle)] pt-8" delay={0.12}>
           <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <p className="text-[clamp(4rem,13vw,10rem)] font-medium leading-[0.82] tracking-[-0.09em] text-[var(--color-brand-black)]">
+              <p className="text-[clamp(3rem,15vw,10rem)] font-medium leading-[0.82] tracking-[-0.09em] text-[var(--color-brand-black)]">
                 {content.wordmark}
                 <span className="ml-2 inline-block align-top text-[var(--color-primary-blue)]">
                   +

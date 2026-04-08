@@ -9,7 +9,7 @@ interface WorkflowTimelineMetrics {
   scrollSpan: number;
 }
 
-const DESKTOP_BREAKPOINT = 1024;
+const DESKTOP_BREAKPOINT = 1280;
 const STICKY_TOP_OFFSET = 0;
 const SCENE_EXIT_PADDING = 0;
 const defaultMetrics: WorkflowTimelineMetrics = {

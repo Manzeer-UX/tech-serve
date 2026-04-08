@@ -1,3 +1,4 @@
+import { cn } from "@/lib/cn";
 import {
   type CapabilitiesSectionContent,
   type CapabilityItem,
@@ -18,18 +19,40 @@ function splitPanelTitle(title: string) {
 export interface WorkflowExposurePanelProps {
   content: CapabilitiesSectionContent;
   items: ReadonlyArray<CapabilityItem>;
+  layout?: "desktop" | "stacked";
 }
 
 export function WorkflowExposurePanel({
   content,
   items,
+  layout = "desktop",
 }: Readonly<WorkflowExposurePanelProps>) {
   const titleLines = splitPanelTitle(content.title);
+  const isDesktopLayout = layout === "desktop";
 
   return (
-    <article className="flex h-full min-w-[92vw] shrink-0 items-center pl-6 md:min-w-[82vw] lg:h-screen lg:min-w-screen lg:pl-0">
-      <div className="relative flex h-full w-full items-center lg:h-screen">
-        <div className="relative mx-auto w-full max-w-[1440px] px-6 py-10 md:px-10 lg:px-8 lg:py-14">
+    <article
+      className={cn(
+        "flex shrink-0 items-center",
+        isDesktopLayout
+          ? "h-full min-w-[92vw] pl-6 md:min-w-[82vw] xl:h-screen xl:min-w-screen xl:pl-0"
+          : "w-full",
+      )}
+    >
+      <div
+        className={cn(
+          "relative flex w-full items-center",
+          isDesktopLayout && "h-full xl:h-screen",
+        )}
+      >
+        <div
+          className={cn(
+            "relative mx-auto w-full max-w-[1440px]",
+            isDesktopLayout
+              ? "px-4 py-10 sm:px-6 md:px-10 xl:px-8 xl:py-14"
+              : "pt-2",
+          )}
+        >
           <div className="mx-auto max-w-[52rem] text-center">
             <span className="inline-flex rounded-full border border-[var(--color-border-strong)] bg-white/78 px-3.5 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.18em] text-[var(--color-secondary-purple)] shadow-[var(--shadow-pill)]">
               Built for every layer
@@ -46,7 +69,7 @@ export function WorkflowExposurePanel({
             </p>
           </div>
 
-          <div className="mt-10">
+          <div className="mt-8 sm:mt-10">
             <WorkflowCapabilityTabs items={items} />
           </div>
         </div>

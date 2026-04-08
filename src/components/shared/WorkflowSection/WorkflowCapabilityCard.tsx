@@ -18,7 +18,7 @@ export function WorkflowCapabilityCard({
   return (
     <article
       className={cn(
-        "grid gap-8 lg:grid-cols-[minmax(0,0.84fr)_minmax(20rem,1fr)] lg:items-center",
+        "grid gap-6 xl:grid-cols-[minmax(0,0.84fr)_minmax(20rem,1fr)] xl:items-center xl:gap-8",
         className,
       )}
     >
@@ -41,7 +41,7 @@ export function WorkflowCapabilityCard({
           {displayItem.description}
         </p>
 
-        <div className="mt-auto pt-7">
+        <div className="mt-auto pt-6 sm:pt-7">
           <span className="inline-flex rounded-full border border-[var(--color-border-strong)] bg-white/88 px-4 py-2 text-[0.78rem] font-medium tracking-[0.01em] text-[var(--color-brand-black)] shadow-[var(--shadow-pill)]">
             {displayItem.metric}
           </span>

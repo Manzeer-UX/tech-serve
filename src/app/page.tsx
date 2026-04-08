@@ -38,9 +38,12 @@ import {
 } from "@/lib/landingPageContent";
 
 export default function Home() {
+  const sectionContainerClassName =
+    "mx-auto w-full max-w-[1440px] px-4 sm:px-6 md:px-10 lg:px-8";
+
   return (
     <div className="relative flex min-h-screen flex-col overflow-x-clip hero-bg">
-      <section className=" relative overflow-hidden">
+      <section className="relative overflow-hidden">
         <LandingBackdrop />
         <HeroRippleEffects />
 
@@ -50,7 +53,7 @@ export default function Home() {
             primaryAction={heroContent.primaryAction}
           />
 
-          <div className="mx-auto w-full max-w-[1440px] px-6 md:px-10 lg:px-8">
+          <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6 md:px-10 lg:px-8">
             <section className="hero-banner-section relative flex min-h-[calc(100svh-5.75rem)] items-center justify-center py-10 md:py-12 lg:min-h-[calc(100svh-6.25rem)] lg:py-16">
               <div className="hero-banner-grid relative z-10 mx-auto grid w-full items-center gap-10 lg:grid-cols-[minmax(0,0.96fr)_minmax(0,1fr)] xl:gap-16">
                 <div className="hero-banner-copy">
@@ -65,51 +68,49 @@ export default function Home() {
         </div>
       </section>
 
-      <main className="relative z-10  bg-white flex-1 ">
-        <div className="mx-auto w-full max-w-[1440px]">
-          <FeatureShowcaseSection
-            content={featureShowcaseSectionContent}
-            items={featureShowcaseItems}
-          />
-        </div>
+      <main className="relative z-10 flex-1 overflow-x-clip bg-white">
+        <FeatureShowcaseSection
+          content={featureShowcaseSectionContent}
+          items={featureShowcaseItems}
+        />
         <div className="bg-white">
-          <div className="mx-auto w-full max-w-[1440px]">
+          <div className={sectionContainerClassName}>
             <CorePhilosophySection
               content={philosophySectionContent}
               panel={philosophySectionPanelContent}
             />
           </div>
         </div>
-       <div className="bg-all">
-       <div className="mx-auto w-full max-w-[1440px]">
-          <WorkflowSection
-            content={workflowSectionContent}
-            nextSectionContent={capabilitiesSectionContent}
-            nextSectionItems={capabilityItems}
-            steps={workflowSteps}
-          />
+        <div className="bg-all">
+          <div className={sectionContainerClassName}>
+            <WorkflowSection
+              content={workflowSectionContent}
+              nextSectionContent={capabilitiesSectionContent}
+              nextSectionItems={capabilityItems}
+              steps={workflowSteps}
+            />
+          </div>
         </div>
-       </div>
-        <div className="mx-auto w-full max-w-[1440px]">
+        <div className={sectionContainerClassName}>
           <OutcomesSection
             content={audienceSectionContent}
             items={audienceItems}
           />
         </div>
-        <div className="mx-auto w-full max-w-[1440px]">
+        <div className={sectionContainerClassName}>
           <PartnerResultsSection
             content={outcomesSectionContent}
             metrics={outcomeMetrics}
             testimonials={testimonialItems}
           />
         </div>
-        <div className="mx-auto w-full max-w-[1440px]">
+        <div className={sectionContainerClassName}>
           <FinalCtaSection
             actions={finalCtaActions}
             content={finalCtaSectionContent}
           />
         </div>
-      </main >
+      </main>
       <SiteFooter
         columns={footerColumns}
         content={footerSectionContent}
@@ -117,6 +118,6 @@ export default function Home() {
         socialLinks={footerSocialLinks}
         utilityLinks={footerUtilityLinks}
       />
-    </div >
+    </div>
   );
 }
