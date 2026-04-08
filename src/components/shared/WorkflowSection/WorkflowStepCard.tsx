@@ -21,7 +21,7 @@ function WorkflowCardPanel({
   return (
     <div
       className={cn(
-        "relative w-full max-w-[16.75rem] self-start overflow-hidden rounded-[2rem] border border-[var(--color-border-strong)] bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(246,240,255,0.88))] px-5 py-5 shadow-[var(--shadow-card)]",
+        "relative w-full self-start overflow-hidden rounded-[1.75rem] border border-[var(--color-border-strong)] bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(246,240,255,0.88))] px-4 py-4 shadow-[var(--shadow-card)] xl:rounded-[2rem] xl:px-5 xl:py-5",
         isTop ? "row-start-1" : "row-start-5",
       )}
     >
@@ -32,11 +32,11 @@ function WorkflowCardPanel({
           <span className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-secondary-purple)]">
             {stepLabel}
           </span>
-          <h3 className="mt-2 text-[1.28rem] font-semibold leading-[1.02] tracking-[-0.04em] text-[var(--color-brand-black)]">
+          <h3 className="mt-2 text-[1.14rem] font-semibold leading-[1.05] tracking-[-0.04em] text-[var(--color-brand-black)] xl:text-[1.28rem] xl:leading-[1.02]">
             {step.title}
           </h3>
         </div>
-        <p className="mt-3 text-[0.88rem] leading-6 text-[var(--color-muted)]">
+        <p className="mt-3 text-[0.86rem] leading-6 text-[var(--color-muted)]">
           {step.description}
         </p>
         <div className="pt-4">
@@ -56,7 +56,7 @@ export function WorkflowStepCard({
   const isTop = index % 2 === 0;
 
   return (
-    <article className="grid h-full justify-items-center grid-rows-[15rem_3.75rem_2.25rem_3.75rem_15rem]">
+    <article className="grid h-full justify-items-center grid-rows-[13rem_3rem_2.5rem_3rem_13rem] 2xl:grid-rows-[14rem_3.5rem_2.5rem_3.5rem_14rem]">
       {isTop ? <WorkflowCardPanel align="top" step={step} /> : null}
 
       <span

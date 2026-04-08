@@ -20,7 +20,7 @@ export function CorePhilosophyPointerCard({
   return (
     <li
       className={cn(
-        "relative overflow-hidden py-6 sm:grid sm:grid-cols-[8.5rem_minmax(0,1fr)] sm:gap-6",
+        "relative overflow-hidden py-5 sm:grid sm:grid-cols-[8.5rem_minmax(0,1fr)] sm:gap-6 sm:py-6",
         isFirstCard ? "pt-2" : "",
       )}
     >
@@ -44,7 +44,7 @@ export function CorePhilosophyPointerCard({
             <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[var(--color-secondary-purple)]">
               0{index + 1}
             </p>
-            <span className="h-px w-12 bg-[linear-gradient(90deg,var(--color-primary-blue),transparent)]" />
+            <span className="hidden h-px w-12 bg-[var(--color-border-strong)] sm:block" />
           </div>
 
           <p className="mt-3 text-[0.7rem] font-medium uppercase tracking-[0.22em] text-[var(--color-muted)]">
@@ -54,15 +54,15 @@ export function CorePhilosophyPointerCard({
       </div>
 
       <div className="relative mt-5 sm:mt-0">
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-3">
           <span className="h-2.5 w-2.5 rounded-full brand-gradient shadow-[0_0_0_0.35rem_rgba(80,0,254,0.05)]" />
-          <span className="h-px flex-1 bg-[linear-gradient(90deg,rgba(80,0,254,0.28),rgba(150,100,250,0.12),transparent)]" />
+          <span className="hidden h-px flex-1 bg-[var(--color-border-subtle)] sm:block" />
           <span className="text-[0.68rem] font-medium uppercase tracking-[0.18em] text-[var(--color-secondary-purple)]">
             {pointerNote}
           </span>
         </div>
 
-        <p className="mt-5 max-w-[28rem] text-[1.14rem] leading-[1.85] tracking-[-0.04em] text-[var(--color-brand-black)] sm:text-[1.2rem]">
+        <p className="mt-5 max-w-[28rem] text-[1.04rem] leading-[1.7] tracking-[-0.04em] text-[var(--color-brand-black)] sm:text-[1.2rem] sm:leading-[1.85]">
           {highlight}
         </p>
       </div>

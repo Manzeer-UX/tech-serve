@@ -42,31 +42,30 @@ export function OutcomesAudienceCard({
     <RevealInView delay={delay} className="h-full">
       <article
         className={cn(
-          "group relative flex h-full flex-col overflow-hidden border border-[var(--color-border-strong)] px-6 py-6 shadow-[var(--shadow-hero)] transition-transform duration-500 hover:-translate-y-1 sm:px-7 sm:py-7",
+          "group relative flex h-full flex-col overflow-hidden border border-[var(--color-border-strong)] px-5 py-5 shadow-[var(--shadow-hero)] transition-transform duration-500 hover:-translate-y-1 sm:px-7 sm:py-7",
           variant.shell,
         )}
       >
         <div className={cn("ambient-orb absolute right-[-2rem] top-[-1rem] h-36 w-36 rounded-full blur-3xl", variant.orb)} />
-        <div className={cn("absolute inset-x-8 top-0 h-px bg-gradient-to-r", variant.accent)} />
         <div className="absolute inset-x-0 bottom-0 h-28 bg-[linear-gradient(180deg,transparent,rgba(255,255,255,0.22))]" />
 
-        <div className="relative flex items-center justify-between gap-4">
+        <div className="relative flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
             <span className="inline-flex rounded-full border border-[var(--color-border-strong)] bg-white/84 px-3 py-1.5 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-[var(--color-secondary-purple)] shadow-[var(--shadow-pill)]">
               {item.id}
             </span>
             <OutcomesAudienceIcon id={item.id} />
           </div>
-          <p className="max-w-[11rem] text-right text-[0.72rem] font-medium uppercase tracking-[0.16em] text-[var(--color-secondary-purple)]">
+          <p className="max-w-none text-left text-[0.72rem] font-medium uppercase tracking-[0.16em] text-[var(--color-secondary-purple)] sm:max-w-[11rem] sm:text-right">
             {item.title}
           </p>
         </div>
 
-        <h3 className="relative mt-6 max-w-[11ch] text-[clamp(1.8rem,2.5vw,2.35rem)] font-medium leading-[1.03] tracking-[-0.055em] text-[var(--color-brand-black)]">
+        <h3 className="relative mt-6 max-w-[12ch] text-[clamp(1.8rem,2.5vw,2.35rem)] font-medium leading-[1.03] tracking-[-0.055em] text-[var(--color-brand-black)] sm:max-w-[11ch]">
           {item.subtitle}
         </h3>
 
-        <p className="relative mt-4 max-w-[15rem] text-[0.92rem] leading-7 text-[var(--color-muted)]">
+        <p className="relative mt-4 max-w-none text-[0.92rem] leading-7 text-[var(--color-muted)] sm:max-w-[15rem]">
           {item.role}
         </p>
 
@@ -85,9 +84,9 @@ export function OutcomesAudienceCard({
           </p>
         </div>
 
-        <div className="relative mt-8 flex items-center gap-3">
+        <div className="relative mt-8 flex flex-wrap items-center gap-3">
           <span className="h-2.5 w-2.5 rounded-full brand-gradient shadow-[0_0_0_0.35rem_rgba(80,0,254,0.05)]" />
-          <span className="h-px flex-1 bg-[linear-gradient(90deg,rgba(80,0,254,0.36),rgba(150,100,250,0.14),transparent)]" />
+          <span className="hidden h-px flex-1 bg-[var(--color-border-subtle)] sm:block" />
           <span className="inline-flex rounded-full border border-[var(--color-border-strong)] bg-white/88 px-4 py-2 text-[0.78rem] font-medium tracking-[0.01em] text-[var(--color-brand-black)] shadow-[var(--shadow-pill)]">
             {item.metric}
           </span>

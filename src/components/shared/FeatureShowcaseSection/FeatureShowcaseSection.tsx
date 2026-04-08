@@ -5,7 +5,6 @@ import { type FeatureShowcaseItem, type FeatureShowcaseSectionContent } from "@/
 
 import { FeatureShowcaseCard } from "./FeatureShowcaseCard";
 import { FeatureShowcaseSectionBackground } from "./FeatureShowcaseSectionBackground";
-import { div } from "motion/react-client";
 
 export interface FeatureShowcaseSectionProps {
   content: FeatureShowcaseSectionContent;
@@ -13,7 +12,7 @@ export interface FeatureShowcaseSectionProps {
 }
 
 function getFeatureShowcaseCardOffset(index: number) {
-  return index % 2 === 0 ? -88 : 88;
+  return index % 2 === 0 ? -56 : 56;
 }
 
 export function FeatureShowcaseSection({
@@ -21,11 +20,10 @@ export function FeatureShowcaseSection({
   items,
 }: Readonly<FeatureShowcaseSectionProps>) {
   return (
-   <div>
-     <section className="relative  left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-transparent pb-24 pt-16 md:pt-20">
+    <section className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-transparent pb-20 pt-14 sm:pb-24 sm:pt-16 md:pt-20">
       <FeatureShowcaseSectionBackground />
-      <div className="relative z-10 mx-auto max-w-[1440px] bg-transparent px-6 md:px-10 lg:px-8">
-        <RevealInView className="relative mx-auto max-w-[38rem] bg-transparent text-center">
+      <div className="relative z-10 mx-auto max-w-[1440px] px-4 sm:px-6 md:px-10 lg:px-8">
+        <RevealInView className="relative mx-auto max-w-[38rem] text-center">
           <span className="inline-flex rounded-full border border-[var(--color-border-strong)] bg-transparent px-3.5 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.16em] text-[var(--color-secondary-purple)]">
             {content.eyebrow}
           </span>
@@ -41,7 +39,7 @@ export function FeatureShowcaseSection({
           </p>
         </RevealInView>
 
-        <div className="relative mt-10 grid gap-5 lg:grid-cols-6">
+        <div className="relative mt-10 grid gap-4 sm:gap-5 lg:grid-cols-6">
           {items.map((item, index) => (
             <RevealInView
               key={item.id}
@@ -74,6 +72,5 @@ export function FeatureShowcaseSection({
         </div>
       </div>
     </section>
-   </div>
   );
 }

@@ -28,7 +28,7 @@ export function WorkflowCapabilityTabs({
       <div
         role="tablist"
         aria-label="Capabilities"
-        className="mx-auto grid max-w-[48rem] grid-cols-2 gap-px overflow-hidden rounded-[1.5rem] border border-[var(--color-border-strong)] bg-[var(--color-border-strong)] shadow-[var(--shadow-pill)] md:grid-cols-3"
+        className="mx-auto grid max-w-[48rem] grid-cols-1 gap-px overflow-hidden rounded-[1.5rem] border border-[var(--color-border-strong)] bg-[var(--color-border-strong)] shadow-[var(--shadow-pill)] sm:grid-cols-2 xl:grid-cols-3"
       >
         {items.map((item) => {
           const displayItem = getWorkflowCapabilityDisplay(item);
@@ -51,13 +51,13 @@ export function WorkflowCapabilityTabs({
                 });
               }}
               className={cn(
-                "min-h-[4.8rem] min-w-0 bg-white/64 px-4 py-3 text-center transition-colors",
+                "min-h-[4.2rem] min-w-0 bg-white/64 px-4 py-3 text-left transition-colors sm:min-h-[4.8rem] sm:text-center",
                 isActive
                   ? "bg-[linear-gradient(180deg,rgba(255,255,255,0.94),rgba(244,238,255,0.9))] text-[var(--color-brand-black)]"
                   : "bg-white/28 text-[var(--color-muted)] hover:bg-white/56",
               )}
             >
-              <p className="mx-auto max-w-[12rem] text-[0.92rem] font-semibold leading-6 tracking-[-0.03em]">
+              <p className="mx-auto max-w-[12rem] text-[0.88rem] font-semibold leading-5 tracking-[-0.03em] sm:text-[0.92rem] sm:leading-6">
                 {displayItem.title}
               </p>
             </button>

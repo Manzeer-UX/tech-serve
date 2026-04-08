@@ -18,8 +18,8 @@ export function CorePhilosophySection({
   panel,
 }: Readonly<CorePhilosophySectionProps>) {
   return (
-    <section className="relative pb-24 pt-18 md:pt-22">
-      <div className="grid gap-10 lg:grid-cols-[minmax(0,0.88fr)_minmax(22rem,1.12fr)] lg:items-center lg:gap-12">
+    <section className="relative pb-20 pt-16 sm:pb-24 sm:pt-20">
+      <div className="grid gap-8 sm:gap-10 lg:grid-cols-[minmax(0,0.88fr)_minmax(22rem,1.12fr)] lg:items-center lg:gap-12">
         <RevealInView className="max-w-[34rem]">
           <div className="inline-flex items-center gap-2.5 rounded-full border border-[var(--color-border-strong)] bg-[var(--color-surface-card)] px-3.5 py-1.5 shadow-[var(--shadow-pill)]">
             <TrackPoint className="h-4 w-4" />
@@ -41,7 +41,7 @@ export function CorePhilosophySection({
             {content.description}
           </p>
 
-          <ol className="mt-10 divide-y divide-[var(--color-border-subtle)]">
+          <ol className="mt-8 divide-y divide-[var(--color-border-subtle)] sm:mt-10">
             {content.highlights.map((highlight, index) => (
               <CorePhilosophyPointerCard
                 key={highlight}
