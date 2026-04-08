@@ -5,6 +5,7 @@ import { type FeatureShowcaseItem, type FeatureShowcaseSectionContent } from "@/
 
 import { FeatureShowcaseCard } from "./FeatureShowcaseCard";
 import { FeatureShowcaseSectionBackground } from "./FeatureShowcaseSectionBackground";
+import { div } from "motion/react-client";
 
 export interface FeatureShowcaseSectionProps {
   content: FeatureShowcaseSectionContent;
@@ -20,7 +21,8 @@ export function FeatureShowcaseSection({
   items,
 }: Readonly<FeatureShowcaseSectionProps>) {
   return (
-    <section className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-transparent pb-24 pt-16 md:pt-20">
+   <div>
+     <section className="relative  left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-transparent pb-24 pt-16 md:pt-20">
       <FeatureShowcaseSectionBackground />
       <div className="relative z-10 mx-auto max-w-[1440px] bg-transparent px-6 md:px-10 lg:px-8">
         <RevealInView className="relative mx-auto max-w-[38rem] bg-transparent text-center">
@@ -72,5 +74,6 @@ export function FeatureShowcaseSection({
         </div>
       </div>
     </section>
+   </div>
   );
 }

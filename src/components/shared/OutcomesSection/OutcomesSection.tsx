@@ -1,63 +1,74 @@
 import { RevealInView } from "@/components/shared/RevealInView";
-import { TextReveal } from "@/components/shared/TextReveal";
 import { TrackPoint } from "@/components/shared/TrackPoint";
 import {
-  type OutcomeMetric,
-  type OutcomesSectionContent,
-  type TestimonialItem,
+  type AudienceItem,
+  type AudienceSectionContent,
 } from "@/lib/landingPageContent";
 
-import { OutcomeMetricCard } from "./OutcomeMetricCard";
-import { TestimonialCard } from "./TestimonialCard";
+import { OutcomesAudienceCard } from "./OutcomesAudienceCard";
+
+function splitAudienceTitle(title: string) {
+  const normalizedTitle = title.replace(/\s+/g, " ").trim();
+
+  if (normalizedTitle === "Built for Every Layer of the IT Sales Ecosystem.") {
+    return ["Built for Every Layer", "of the IT Sales Ecosystem."];
+  }
+
+  return [normalizedTitle];
+}
 
 export interface OutcomesSectionProps {
-  content: OutcomesSectionContent;
-  metrics: ReadonlyArray<OutcomeMetric>;
-  testimonials: ReadonlyArray<TestimonialItem>;
+  content: AudienceSectionContent;
+  items: ReadonlyArray<AudienceItem>;
 }
 
 export function OutcomesSection({
   content,
-  metrics,
-  testimonials,
+  items,
 }: Readonly<OutcomesSectionProps>) {
+  const titleLines = splitAudienceTitle(content.title);
+
   return (
-    <section className="relative pb-24 pt-8">
-      <div className="relative overflow-hidden rounded-[3rem] border border-[var(--color-border-strong)] bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(247,243,255,0.9))] px-5 py-6 shadow-[var(--shadow-hero)] md:px-7 md:py-7 lg:px-8 lg:py-8">
-        <div className="ambient-orb ambient-orb-left absolute left-[-2rem] top-10 h-44 w-44 rounded-full bg-[var(--color-glow-secondary)] blur-3xl" />
-        <div className="ambient-orb ambient-orb-right absolute bottom-0 right-[-2rem] h-52 w-52 rounded-full bg-[var(--color-glow-primary)] blur-3xl" />
+    <section className="relative pb-24 pt-18 md:pt-22">
+      <RevealInView className="relative mx-auto max-w-[56rem] text-center">
+        <div className="inline-flex items-center gap-2.5 rounded-full border border-[var(--color-border-strong)] bg-white/82 px-4 py-2 shadow-[var(--shadow-pill)]">
+          <TrackPoint className="h-4 w-4" />
+          <span className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-[var(--color-secondary-purple)]">
+            {content.eyebrow}
+          </span>
+        </div>
 
-        <RevealInView className="mx-auto max-w-[48rem] text-center">
-          <div className="inline-flex items-center gap-2.5 rounded-full border border-[var(--color-border-strong)] bg-white/84 px-4 py-2 shadow-[var(--shadow-pill)]">
-            <TrackPoint className="h-4 w-4" />
-            <span className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-[var(--color-secondary-purple)]">
-              {content.eyebrow}
+        <h2 className="mx-auto mt-6 max-w-[22ch] text-balance text-[clamp(2.35rem,4vw,4.4rem)] font-medium leading-[1.03] tracking-[-0.06em] text-[var(--color-brand-black)]">
+          {titleLines.map((line) => (
+            <span key={line} className="block md:whitespace-nowrap">
+              {line}
             </span>
-          </div>
-          <TextReveal
-            as="h2"
-            className="mt-5"
-            textClassName="justify-center text-balance text-[clamp(2rem,3.4vw,3.35rem)] font-medium leading-[1.02] tracking-[-0.05em] text-[var(--color-brand-black)]"
-          >
-            {content.title}
-          </TextReveal>
-          <p className="mt-5 text-[1rem] leading-8 text-[var(--color-muted)]">
-            {content.description}
-          </p>
-        </RevealInView>
-
-        <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          {metrics.map((metric, index) => (
-            <OutcomeMetricCard key={metric.label} delay={index * 0.06} metric={metric} />
           ))}
-        </div>
+        </h2>
 
-        <div className="mt-8 grid gap-5 xl:grid-cols-3">
-          {testimonials.map((item, index) => (
-            <TestimonialCard key={item.name} delay={index * 0.08} item={item} />
-          ))}
+        <p className="mx-auto mt-6 max-w-[43rem] text-[1rem] leading-8 text-[var(--color-muted)]">
+          {content.description}
+        </p>
+
+        <div className="mx-auto mt-7 flex w-full max-w-[12rem] items-center gap-3">
+          <span className="h-2.5 w-2.5 rounded-full brand-gradient" />
+          <span className="h-px flex-1 bg-[linear-gradient(90deg,rgba(80,0,254,0.32),transparent)]" />
+          <span className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-[var(--color-secondary-purple)]">
+            Segments
+          </span>
         </div>
-      </div>
+      </RevealInView>
+
+      <ol className="relative mt-14 grid gap-5 lg:grid-cols-3 lg:items-stretch">
+        {items.map((item, index) => (
+          <OutcomesAudienceCard
+            key={item.id}
+            delay={index * 0.08}
+            index={index}
+            item={item}
+          />
+        ))}
+      </ol>
     </section>
   );
 }

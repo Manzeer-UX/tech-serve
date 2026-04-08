@@ -196,6 +196,24 @@ export interface FinalCtaSectionContent {
   title: string;
 }
 
+export interface FooterSectionContent {
+  copyright: string;
+  tagline: string;
+  utilityTitle: string;
+  wordmark: string;
+}
+
+export interface FooterColumn {
+  links: ReadonlyArray<ActionLink>;
+  title: string;
+}
+
+export interface FooterSocialLink {
+  href: string;
+  id: "linkedin" | "x" | "youtube";
+  label: string;
+}
+
 export const navigationItems: ReadonlyArray<NavigationItem> = [
   { href: "#", label: "About" },
   { href: "#", label: "Platform" },
@@ -569,9 +587,9 @@ export const capabilityItems: ReadonlyArray<CapabilityItem> = [
 
 export const audienceSectionContent: AudienceSectionContent = {
   eyebrow: "Built for every layer",
-  title: "Six Capabilities. One Connected System.",
+  title: "Built for Every Layer of the IT Sales Ecosystem.",
   description:
-    "AI agents, embedded finance, ecosystem intelligence, and growth strategy, everything purpose-built for the IT sales ecosystem.",
+    "TechServ was designed to create value across the ecosystem, not just in one corner of it. Whether you create the technology, move the technology, or deliver the technology, the platform helps you convert more opportunity into measurable growth.",
 };
 
 export const audienceItems: ReadonlyArray<AudienceItem> = [
@@ -632,14 +650,14 @@ export const testimonialItems: ReadonlyArray<TestimonialItem> = [
   },
   {
     quote:
-      "We were close to passing on a major deployment because cash flow would not support it. TechServâ€™s financing capability changed that. One deal delivered more value than we expected from the platform in years.",
+      "We were close to passing on a major deployment because cash flow would not support it. TechServ's financing capability changed that. One deal delivered more value than we expected from the platform in years.",
     name: "Anjali Kumar",
     role: "Regional Systems Integrator",
   },
   {
     quote:
       "AIDA surfaced accounts we had never actively targeted, but they were already evaluating exactly what we sold. That changed the quality of our pipeline immediately.",
-    name: "Marcus Oâ€™Reilly",
+    name: "Marcus O'Reilly",
     role: "VAR Partner",
   },
 ];
@@ -655,4 +673,76 @@ export const finalCtaActions: ReadonlyArray<ActionLink> = [
   { href: "#", label: "Book a Demo" },
   { href: "#", label: "Connect with Us" },
   { href: "#", label: "Find a Partner" },
+];
+
+export const footerSectionContent: FooterSectionContent = {
+  utilityTitle: "How can we help?",
+  tagline: "Connected growth for the IT sales ecosystem.",
+  wordmark: "techserv",
+  copyright: "2026 TechServ.ai. Built for modern IT sales growth.",
+};
+
+export const footerUtilityLinks: ReadonlyArray<ActionLink> = [
+  { href: "#", label: "Contact us" },
+  { href: "#", label: "Help center" },
+  { href: "#", label: "Platform status" },
+];
+
+export const footerSocialLinks: ReadonlyArray<FooterSocialLink> = [
+  { href: "#", id: "linkedin", label: "LinkedIn" },
+  { href: "#", id: "x", label: "X" },
+  { href: "#", id: "youtube", label: "YouTube" },
+];
+
+export const footerColumns: ReadonlyArray<FooterColumn> = [
+  {
+    title: "Platform",
+    links: [
+      { href: "#", label: "AIDA demand intelligence" },
+      { href: "#", label: "BidBrain proposals" },
+      { href: "#", label: "ContractAI workflows" },
+      { href: "#", label: "Liquidity Suite" },
+      { href: "#", label: "OEM Partner Hub" },
+    ],
+  },
+  {
+    title: "Solutions",
+    links: [
+      { href: "#", label: "For OEM vendors" },
+      { href: "#", label: "For distributors" },
+      { href: "#", label: "For SI / IT resellers" },
+      { href: "#", label: "Embedded finance" },
+      { href: "#", label: "Growth advisory" },
+    ],
+  },
+  {
+    title: "AI agents",
+    links: [
+      { href: "#", label: "BidBrain" },
+      { href: "#", label: "ContractAI" },
+      { href: "#", label: "ConsultBot" },
+      { href: "#", label: "Partner intelligence" },
+      { href: "#", label: "RFP acceleration" },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { href: "#", label: "Customer stories" },
+      { href: "#", label: "Channel glossary" },
+      { href: "#", label: "Partner results" },
+      { href: "#", label: "Blog" },
+      { href: "#", label: "Research" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { href: "#", label: "About" },
+      { href: "#", label: "Careers" },
+      { href: "#", label: "Partner program" },
+      { href: "#", label: "Book a demo" },
+      { href: "#", label: "Find a partner" },
+    ],
+  },
 ];

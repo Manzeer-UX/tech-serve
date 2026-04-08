@@ -26,8 +26,7 @@ export function WorkflowSection({
   nextSectionItems,
   steps,
 }: Readonly<WorkflowSectionProps>) {
-  const { metrics, sceneRef, trackRef, translateX, viewportRef } =
-    useWorkflowTimeline();
+  const { metrics, sceneRef, trackRef, viewportRef } = useWorkflowTimeline();
 
   return (
     <section className="relative pb-24 pt-18 md:pt-22">
@@ -56,11 +55,6 @@ export function WorkflowSection({
               <div
                 ref={trackRef}
                 className="relative z-10 flex h-full w-max items-stretch gap-20 pl-[8vw] pr-0 will-change-transform lg:gap-24"
-                style={
-                  metrics.isDesktop
-                    ? { transform: `translate3d(-${translateX}px,0,0)` }
-                    : undefined
-                }
               >
                 <div className="absolute left-[8vw] right-0 top-1/2 h-px -translate-y-1/2 bg-[linear-gradient(90deg,rgba(80,0,254,0.18),rgba(80,0,254,0.76),rgba(150,100,250,0.18))]" />
                 <div className="absolute left-[8vw] right-0 top-1/2 h-5 -translate-y-1/2 bg-[radial-gradient(circle_at_center,rgba(150,100,250,0.16),transparent_70%)] blur-md" />

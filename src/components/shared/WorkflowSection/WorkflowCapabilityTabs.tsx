@@ -24,11 +24,11 @@ export function WorkflowCapabilityTabs({
   }
 
   return (
-    <div className="rounded-[2rem] border border-[var(--color-border-strong)] bg-white/58 p-4 shadow-[var(--shadow-card)] backdrop-blur-sm lg:p-5">
+    <div>
       <div
         role="tablist"
         aria-label="Capabilities"
-        className="flex gap-3 overflow-x-auto pb-1 lg:grid lg:grid-cols-2 lg:overflow-visible xl:grid-cols-3"
+        className="mx-auto grid max-w-[48rem] grid-cols-2 gap-px overflow-hidden rounded-[1.5rem] border border-[var(--color-border-strong)] bg-[var(--color-border-strong)] shadow-[var(--shadow-pill)] md:grid-cols-3"
       >
         {items.map((item) => {
           const displayItem = getWorkflowCapabilityDisplay(item);
@@ -51,16 +51,13 @@ export function WorkflowCapabilityTabs({
                 });
               }}
               className={cn(
-                "min-w-[13.5rem] rounded-[1.35rem] border px-4 py-3 text-left transition-colors lg:min-w-0",
+                "min-h-[4.8rem] min-w-0 bg-white/64 px-4 py-3 text-center transition-colors",
                 isActive
-                  ? "border-[var(--color-border-strong)] bg-white text-[var(--color-brand-black)] shadow-[var(--shadow-pill)]"
-                  : "border-[var(--color-border-subtle)] bg-white/48 text-[var(--color-muted)] hover:bg-white/72",
+                  ? "bg-[linear-gradient(180deg,rgba(255,255,255,0.94),rgba(244,238,255,0.9))] text-[var(--color-brand-black)]"
+                  : "bg-white/28 text-[var(--color-muted)] hover:bg-white/56",
               )}
             >
-              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[var(--color-secondary-purple)]">
-                {item.id}
-              </p>
-              <p className="mt-2 text-[0.96rem] font-semibold leading-6">
+              <p className="mx-auto max-w-[12rem] text-[0.92rem] font-semibold leading-6 tracking-[-0.03em]">
                 {displayItem.title}
               </p>
             </button>
@@ -68,7 +65,7 @@ export function WorkflowCapabilityTabs({
         })}
       </div>
 
-      <div className="mt-4">
+      <div className="mt-12">
         <div
           id={`${baseId}-${activeItem.id}-panel`}
           role="tabpanel"

@@ -1,61 +1,48 @@
 import { CorePhilosophySection } from "@/components/shared/CorePhilosophySection";
 import { LandingBackdrop } from "@/components/layout/LandingBackdrop";
+import { SiteFooter } from "@/components/layout/SiteFooter";
 import { FeatureShowcaseSection } from "@/components/shared/FeatureShowcaseSection";
+import { FinalCtaSection } from "@/components/shared/FinalCtaSection";
+import { HeroRippleEffects } from "@/components/shared/HeroRippleEffects";
+import {
+  OutcomesSection,
+  PartnerResultsSection,
+} from "@/components/shared/OutcomesSection";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { HeroCopy } from "@/components/shared/HeroCopy";
 import { HeroPanel } from "@/components/shared/HeroPanel";
-import { RippleGrid } from "@/components/shared/RippleGrid";
 import { WorkflowSection } from "@/components/shared/WorkflowSection";
 import {
+  audienceItems,
+  audienceSectionContent,
   capabilitiesSectionContent,
   capabilityItems,
   featureShowcaseItems,
   featureShowcaseSectionContent,
+  footerColumns,
+  footerSectionContent,
+  footerSocialLinks,
+  footerUtilityLinks,
+  finalCtaActions,
+  finalCtaSectionContent,
   heroContent,
   heroMetrics,
   navigationItems,
+  outcomeMetrics,
+  outcomesSectionContent,
   philosophySectionContent,
   philosophySectionPanelContent,
+  testimonialItems,
   workflowSectionContent,
   workflowSteps,
 } from "@/lib/landingPageContent";
 
 export default function Home() {
   return (
-    <div className="relative flex min-h-screen flex-col overflow-x-clip">
+    <div className="relative flex min-h-screen flex-col overflow-x-clip hero-bg">
       <section className=" relative overflow-hidden">
         <LandingBackdrop />
-        <RippleGrid
-          className="banner-shell-ripple absolute inset-0"
-          enableRainbow={false}
-          gridColor="#ffffff"
-          rippleIntensity={0.05}
-          gridSize={10}
-          gridThickness={15}
-          fadeDistance={1.65}
-          fadeFloor={0.34}
-          vignetteStrength={2}
-          glowIntensity={0.12}
-          mouseInteraction={true}
-          mouseInteractionRadius={1.2}
-          opacity={0.8}
-        />
-        <RippleGrid
-          className="banner-shell-ripple-secondary absolute inset-0"
-          enableRainbow={false}
-          gridColor="#dac9ff"
-          rippleIntensity={0.018}
-          gridSize={8.8}
-          gridThickness={12}
-          fadeDistance={1.5}
-          fadeFloor={0.46}
-          vignetteStrength={1.7}
-          glowIntensity={0.08}
-          gridRotation={14}
-          mouseInteraction={true}
-          mouseInteractionRadius={1.6}
-          opacity={0.24}
-        />
+        <HeroRippleEffects />
 
         <div className="relative z-10">
           <SiteHeader
@@ -78,22 +65,58 @@ export default function Home() {
         </div>
       </section>
 
-      <main className="relative z-10 mx-auto w-full max-w-[1440px] flex-1 px-6 md:px-10 lg:px-8">
-        <FeatureShowcaseSection
-          content={featureShowcaseSectionContent}
-          items={featureShowcaseItems}
-        />
-        <CorePhilosophySection
-          content={philosophySectionContent}
-          panel={philosophySectionPanelContent}
-        />
-        <WorkflowSection
-          content={workflowSectionContent}
-          nextSectionContent={capabilitiesSectionContent}
-          nextSectionItems={capabilityItems}
-          steps={workflowSteps}
-        />
-      </main>
-    </div>
+      <main className="relative z-10  bg-white flex-1 ">
+        <div className="mx-auto w-full max-w-[1440px]">
+          <FeatureShowcaseSection
+            content={featureShowcaseSectionContent}
+            items={featureShowcaseItems}
+          />
+        </div>
+        <div className="bg-white">
+          <div className="mx-auto w-full max-w-[1440px]">
+            <CorePhilosophySection
+              content={philosophySectionContent}
+              panel={philosophySectionPanelContent}
+            />
+          </div>
+        </div>
+       <div className="bg-all">
+       <div className="mx-auto w-full max-w-[1440px]">
+          <WorkflowSection
+            content={workflowSectionContent}
+            nextSectionContent={capabilitiesSectionContent}
+            nextSectionItems={capabilityItems}
+            steps={workflowSteps}
+          />
+        </div>
+       </div>
+        <div className="mx-auto w-full max-w-[1440px]">
+          <OutcomesSection
+            content={audienceSectionContent}
+            items={audienceItems}
+          />
+        </div>
+        <div className="mx-auto w-full max-w-[1440px]">
+          <PartnerResultsSection
+            content={outcomesSectionContent}
+            metrics={outcomeMetrics}
+            testimonials={testimonialItems}
+          />
+        </div>
+        <div className="mx-auto w-full max-w-[1440px]">
+          <FinalCtaSection
+            actions={finalCtaActions}
+            content={finalCtaSectionContent}
+          />
+        </div>
+      </main >
+      <SiteFooter
+        columns={footerColumns}
+        content={footerSectionContent}
+        cta={heroContent.primaryAction}
+        socialLinks={footerSocialLinks}
+        utilityLinks={footerUtilityLinks}
+      />
+    </div >
   );
 }

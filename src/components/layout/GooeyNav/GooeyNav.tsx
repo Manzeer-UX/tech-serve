@@ -1,7 +1,3 @@
-"use client";
-
-import { useState } from "react";
-
 import { cn } from "@/lib/cn";
 import { type NavigationItem } from "@/lib/landingPageContent";
 
@@ -18,9 +14,8 @@ export function GooeyNav({
   initialActiveIndex = 0,
   items,
 }: Readonly<GooeyNavProps>) {
-  const [activeIndex, setActiveIndex] = useState(
-    items.length > 0 ? Math.min(initialActiveIndex, items.length - 1) : -1,
-  );
+  const activeIndex =
+    items.length > 0 ? Math.min(initialActiveIndex, items.length - 1) : -1;
 
   return (
     <nav aria-label="Primary navigation" className={cn(styles.nav, className)}>
@@ -30,7 +25,6 @@ export function GooeyNav({
             <a
               href={item.href}
               aria-current={index === activeIndex ? "page" : undefined}
-              onClick={() => setActiveIndex(index)}
               className={cn(styles.link, index === activeIndex && styles.linkActive)}
             >
               {item.label}

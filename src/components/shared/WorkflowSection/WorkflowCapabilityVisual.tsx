@@ -36,11 +36,11 @@ export function WorkflowCapabilityVisual({
   return (
     <div
       className={cn(
-        "rounded-[1.6rem] border border-[var(--color-border-subtle)] bg-[linear-gradient(180deg,rgba(255,255,255,0.94),rgba(246,241,255,0.78))] p-3 shadow-[var(--shadow-pill)]",
+        "rounded-[2rem] border border-[var(--color-border-strong)] bg-[linear-gradient(180deg,rgba(255,255,255,0.94),rgba(244,238,255,0.88))] p-4 shadow-[var(--shadow-card)]",
         className,
       )}
     >
-      <p className="mb-3 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[var(--color-secondary-purple)]">
+      <p className="mb-4 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[var(--color-secondary-purple)]">
         Visual overview
       </p>
       <FeatureShowcaseVisual variant={getCapabilityVariant(item.id)} />

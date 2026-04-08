@@ -13,10 +13,11 @@ export function TestimonialCard({
   return (
     <RevealInView
       delay={delay}
-      className="relative overflow-hidden rounded-[2rem] border border-[var(--color-border-strong)] bg-[rgba(255,255,255,0.88)] px-5 py-5 shadow-[var(--shadow-card)]"
+      className="relative overflow-hidden rounded-[2.2rem] border border-[var(--color-border-strong)] bg-[linear-gradient(180deg,rgba(255,255,255,0.94),rgba(244,238,255,0.88))] px-5 py-5 shadow-[var(--shadow-card)]"
     >
-      <div className="absolute right-4 top-4 text-[4rem] leading-none text-[var(--color-visual-surface-strong)]">
-        “
+      <div className="absolute left-[-1rem] top-[-1rem] h-24 w-24 rounded-full bg-[rgba(150,100,250,0.12)] blur-3xl" />
+      <div className="absolute right-4 top-3 text-[3.6rem] leading-none text-[rgba(150,100,250,0.22)]">
+        &quot;
       </div>
       <p className="relative pr-6 text-[1rem] leading-8 text-[var(--color-brand-black)]">
         {item.quote}

@@ -23,6 +23,16 @@ function clamp(value: number, min: number, max: number) {
   return Math.min(Math.max(value, min), max);
 }
 
+function applyTrackTransform(
+  trackElement: HTMLDivElement,
+  isDesktop: boolean,
+  translateX: number,
+) {
+  trackElement.style.transform = isDesktop
+    ? `translate3d(-${translateX}px, 0, 0)`
+    : "";
+}
+
 function getMetrics(
   viewportElement: HTMLDivElement,
   trackElement: HTMLDivElement,
@@ -50,8 +60,8 @@ export function useWorkflowTimeline() {
   const viewportRef = useRef<HTMLDivElement | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);
   const sceneTopRef = useRef(0);
+  const translateXRef = useRef(0);
   const metricsRef = useRef<WorkflowTimelineMetrics>(defaultMetrics);
-  const [translateX, setTranslateX] = useState(0);
   const [metrics, setMetrics] = useState<WorkflowTimelineMetrics>(defaultMetrics);
 
   useEffect(() => {
@@ -70,6 +80,9 @@ export function useWorkflowTimeline() {
       sceneTopRef.current =
         window.scrollY + sceneElement.getBoundingClientRect().top;
       metricsRef.current = nextMetrics;
+      translateXRef.current = nextMetrics.isDesktop
+        ? clamp(translateXRef.current, 0, nextMetrics.maxTranslateX)
+        : 0;
 
       setMetrics((previousMetrics) => {
         if (
@@ -83,29 +96,35 @@ export function useWorkflowTimeline() {
 
         return nextMetrics;
       });
-
-      setTranslateX((previousTranslateX) =>
-        nextMetrics.isDesktop
-          ? clamp(previousTranslateX, 0, nextMetrics.maxTranslateX)
-          : 0,
+      applyTrackTransform(
+        trackElement,
+        nextMetrics.isDesktop,
+        translateXRef.current,
       );
     };
 
     const updateTranslateX = () => {
+      const trackElement = trackRef.current;
       const currentMetrics = metricsRef.current;
 
-      if (!currentMetrics.isDesktop) {
-        setTranslateX(0);
+      if (!trackElement) {
         return;
       }
 
-      const scrollProgress = clamp(
-        window.scrollY - sceneTopRef.current + STICKY_TOP_OFFSET,
-        0,
-        currentMetrics.maxTranslateX,
-      );
+      const nextTranslateX = currentMetrics.isDesktop
+        ? clamp(
+            window.scrollY - sceneTopRef.current + STICKY_TOP_OFFSET,
+            0,
+            currentMetrics.maxTranslateX,
+          )
+        : 0;
 
-      setTranslateX(scrollProgress);
+      if (translateXRef.current === nextTranslateX) {
+        return;
+      }
+
+      translateXRef.current = nextTranslateX;
+      applyTrackTransform(trackElement, currentMetrics.isDesktop, nextTranslateX);
     };
 
     const handleScroll = () => {
@@ -146,7 +165,6 @@ export function useWorkflowTimeline() {
     metrics,
     sceneRef,
     trackRef,
-    translateX,
     viewportRef,
   };
 }

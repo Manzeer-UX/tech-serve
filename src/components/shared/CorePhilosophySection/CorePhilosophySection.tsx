@@ -5,6 +5,7 @@ import {
   type PhilosophySectionPanelContent,
 } from "@/lib/landingPageContent";
 
+import { CorePhilosophyPointerCard } from "./CorePhilosophyPointerCard";
 import { CorePhilosophyVisual } from "./CorePhilosophyVisual";
 
 export interface CorePhilosophySectionProps {
@@ -40,21 +41,15 @@ export function CorePhilosophySection({
             {content.description}
           </p>
 
-          <div className="mt-8 grid gap-3 sm:grid-cols-2">
+          <ol className="mt-10 divide-y divide-[var(--color-border-subtle)]">
             {content.highlights.map((highlight, index) => (
-              <div
+              <CorePhilosophyPointerCard
                 key={highlight}
-                className="rounded-[1.4rem] border border-[var(--color-border-subtle)] bg-white/72 px-4 py-4 shadow-[var(--shadow-pill)] backdrop-blur-sm"
-              >
-                <span className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[var(--color-secondary-purple)]">
-                  0{index + 1}
-                </span>
-                <p className="mt-3 text-[0.98rem] leading-7 text-[var(--color-brand-black)]">
-                  {highlight}
-                </p>
-              </div>
+                highlight={highlight}
+                index={index}
+              />
             ))}
-          </div>
+          </ol>
         </RevealInView>
 
         <CorePhilosophyVisual panel={panel} />
